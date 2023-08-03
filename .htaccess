@@ -1,0 +1,7 @@
+RewriteCond %{HTTP_HOST} ^mag-group.co.uk$ [OR]
+RewriteCond %{HTTP_HOST} ^www.mag-group.co.uk$
+RewriteRule (.*)$ http://www.mag-group-ltd.co.uk/$1 [R=301,L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^mag-group-ltd.co.uk [NC]
+RewriteRule ^(.*)$ http://www.mag-group-ltd.co.uk/$1 [L,R=301]
