@@ -1,0 +1,259 @@
+/* ====================================================================== */
+/*
+/* Stevensons Stone
+/* @author: p.dermott@fermorltd.co.uk
+/*
+/* ====================================================================== */
+
+//// vendors are for third party packages
+@import 'vendor/grid';
+
+/*---
+/*--- Reset
+/*----------------------------- */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}html,button,input,select,textarea{font-family:sans-serif;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:.67em 0;}h2{font-size:1.5em;margin:.83em 0;}h3{font-size:1.17em;margin:1em 0;}h4{font-size:1em;margin:1.33em 0;}h5{font-size:.83em;margin:1.67em 0;}h6{font-size:.67em;margin:2.33em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}blockquote{margin:1em 40px;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}p,pre{margin:1em 0;}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em;}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}q{quotes:none;}q:before,q:after{content:'';content:none;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}dl,menu,ol,ul{margin:1em 0;}dd{margin:0 0 0 40px;}menu,ol,ul{padding:0px;}nav ul,nav ol{list-style:none;list-style-image:none;}img{border:0;-ms-interpolation-mode:bicubic;}svg:not(:root){overflow:hidden;}figure{margin:0;}form{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em;}legend{border:0;padding:0;white-space:normal;*margin-left:-7px;}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/*---
+/*--- Global Defaults
+/*----------------------------- */
+
+.clearfix {
+  clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;} /* IE < 8 */
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+
+body {
+	background: #eee;
+	color: black;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Playfair Display', sans-serif;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 400;
+	margin: 0% auto 2%;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+h2 {
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.2rem;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+.site-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.container {
+	@include column(12);
+	border: 1px solid #ddd;
+	background-color: white;
+	box-shadow: 0 0 6px 0 rgba(51,51,51,0.7);
+	box-sizing: border-box;
+	overflow: hidden; 
+	padding: 10px;
+	margin-bottom: 20px;  
+}
+
+.intro {
+	padding: 30px 5% 40px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+	h1 {
+		border-bottom: 1px solid #ddd; 
+		padding-bottom: 15px;
+	}
+
+	p {
+		text-align: center;
+	}
+
+	.logos {
+		align-items: center;
+		display: flex;
+
+		.brand {
+			margin: 0 1%;
+
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+//.grid {
+//	display: flex;
+//	flex-wrap: wrap;
+//}
+
+.box-content {
+	@include column(12);
+	display: flex;
+	flex: 1;
+	align-items: flex-start;
+	margin-bottom: 20px !important;
+
+	.image {
+		align-items: center;
+		margin-left: 0;
+		margin-right: 2%;
+		display: flex;
+		height: 100%;
+		width: 25%;
+
+		img, a {
+			font-size: 0;
+			width: 100%;
+		}
+	}
+
+	.text-content {
+		flex: 1 0 auto;
+		margin-right: 2%;
+		width: 25%;
+	}
+
+	.link-block {
+		width: 30%;
+
+		.logo {
+			@include column(10);
+			@include push(1);
+			@include pull(1);
+			margin-bottom: 15px;
+			margin-top: 15px;
+			text-align: center;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.bullets {
+			box-sizing: border-box;
+			padding: 1rem;
+
+			ul {
+				list-style-position: inside;
+				list-style-type: square;
+				margin-left: 5%;
+			}
+		}
+
+		.text-link {
+			@include column(12);
+			border-top: 1px dotted #333;
+			padding-top: 15px;
+			margin-top: 7px;
+			text-align: center;
+
+			a {
+				background: #143658;
+				border: 1px solid #143658;
+				box-sizing: border-box;
+				color: white;
+				display: inline-block;
+				padding: 10px 0;
+				width: 100%;
+
+				&:hover {
+					background: white;
+					color: #143658;
+				}
+			}
+		}
+	}
+}
+
+#healey-and-lord .logo {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+footer {
+	background: #3a3a3a;
+	color: white;
+
+	.text-content {
+		@include column(12);
+
+		a {
+			color: white;
+		}
+	}
+}
+
+
+@media screen and (max-width: 700px) {
+	.intro .logos {
+		flex-wrap: wrap;
+
+		.brand {
+			margin-bottom: 10px;
+			width: 48%;
+		}
+	}
+
+	.box-content {
+		flex-direction: column;
+
+		div {
+			width: 100% !important;
+
+			.logo img {
+				max-width: 281px;
+			}
+		}
+	}
+}
